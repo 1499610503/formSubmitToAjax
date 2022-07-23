@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>同步formSubmit 转 异步ajax</title>
+	</head>
+	<body>
+        <form method="get" id="form1" action="">
+            <div class="field">
+                测试项1:<input type="text" name="field1" value="" />
+            </div>
+            <div class="field">
+                单选框1:<input type="radio" checked="checked" name="field2" value="0" />&nbsp; &nbsp;
+                单选框2:<input type="radio" name="field2" value="1" />
+            </div>
+            <div class="field">
+                多选框1:<input type="checkbox" checked="checked" name="field3" value="0" />&nbsp;&nbsp;
+                多选框2:<input type="checkbox" name="field3" value="1" />
+            </div>
+            <div class="field">
+                测试项4:
+                <select name="field4">
+                    <option value="1">1111</option>
+                    <option value="2">2222</option>
+                    <option value="3">3333</option>
+                    <option value="4">4444</option>
+                </select>
+            </div>
+            <button>提交</button>
+        </form>
+        <script src="js/jquery-1.11.3.min.js"></script>
+        <script src="js/formSubmitToAjax.js"></script>
+        <script>
+            // 需事先给 给form 设置 success 和 error 处理函数
+            $('#form1').get(0).success=function(res){
+                console.log(res)
+            }
+            $('#form1').get(0).error=function(err){
+                console.log(err)
+            }
+            
+        </script>
+	</body>
+</html>
