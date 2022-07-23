@@ -11,6 +11,7 @@ form提交 转 ajax请求
 $('#form1').get(0).success=function(res){
   console.log(res) 
 } 
+
 $('#form1').get(0).error=function(err){
   console.log(err) 
 }
